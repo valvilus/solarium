@@ -1,0 +1,5 @@
+{
+  "workerPrompt": "You are an AI auditor",
+  "inputData": { "prompt": "Analyze default prompt" },
+  "expectedSchema": { "verdict": "number", "confidence": "number", "reasoning": "string" }
+}

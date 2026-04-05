@@ -1,0 +1,9 @@
+{
+  "taskId": "0",
+  "manifestUri": "local://cd59cbd71eadc70f588af39807edab287ed1a3f064dcf575cea96a249842cfa5",
+  "workerAddress": "7ovbXqgmzwmkcfGHASeVJUfDpNJEr6FXhuZ9J6fsHq6S",
+  "output": {
+    "verdict": 1,
+    "reasoning": "The quoted price for the KONE motor replacement is high. While KONE parts are proprietary and can be expensive, making the $30,000 for the motor plausible, the labor cost of $25,000 for 5 days (equating to $5,000 per day) is very high. Even for highly specialized elevator technicians, a daily rate of this magnitude, even assuming a multi-person crew (e.g., 2-3 technicians), puts the hourly rate per person significantly above typical industry averages, inclusive of overhead and profit. While elevator repairs are complex and critical, requiring highly skilled labor, this labor component raises a flag for potential overpricing without further justification regarding the number of technicians, specific challenges of the job, or regional labor market specifics."
+  }
+}

@@ -1,0 +1,25 @@
+FROM node:20-alpine
+
+WORKDIR /app
+
+
+RUN corepack enable && corepack prepare pnpm@latest --activate
+
+
+COPY pnpm-workspace.yaml pnpm-lock.yaml ./
+
+
+COPY platform/packages/sdk ./platform/packages/sdk
+COPY agent ./agent
+
+
+RUN pnpm install --frozen-lockfile --filter "@solarium-labs/agent..."
+
+
+WORKDIR /app/agent
+
+
+ENV NODE_ENV=production
+
+
+CMD ["pnpm", "start"]

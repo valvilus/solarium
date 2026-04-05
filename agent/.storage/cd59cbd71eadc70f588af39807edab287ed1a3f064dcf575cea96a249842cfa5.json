@@ -1,0 +1,9 @@
+{
+  "version": "1.0",
+  "title": "Elevator Repair Verification",
+  "type": 0,
+  "inputData": "Quote: $55,000 to replace KONE elevator motor at residential building 'Sunrise'. Parts: $30k. Labor: $25k for 5 days.",
+  "workerPrompt": "Analyze the elevator repair quote. Is $55k reasonable for a KONE motor replacement? Respond with verdict: 0 (Approved) if fair, 1 (Suspicious) if overpriced.",
+  "validatorPrompt": "Verify the worker's logic. If it is reasonable and uses analytical thinking, vote agree. If it hallucinates, vote disagree.",
+  "expectedSchema": { "verdict": 0, "reasoning": "string" }
+}

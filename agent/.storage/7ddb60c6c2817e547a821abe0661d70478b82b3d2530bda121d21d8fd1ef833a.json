@@ -1,0 +1,9 @@
+{
+  "taskId": "4",
+  "manifestUri": "local://adadafb33bcd3fad3b822c8efdfab14f60d129b84ddecbbeecb5368af9e437ce",
+  "workerAddress": "HKGzZvcno3CG6Z81JZ4xRRHwPPv56G5cpPQBLk5Ros5D",
+  "output": {
+    "verdict": 1,
+    "reasoning": "According to the official weather data for the period from 2026-03-11 to 2026-03-26:\n1. The average maximum temperature was calculated as 37.88°C (sum of max daily temps: 606.1°C / 16 days). This value (37.88°C) exceeds the policy threshold of 30°C.\n2. The total accumulated precipitation for the period was 0mm. This value (0mm) is below the policy threshold of 10mm.\nBoth conditions for drought payout (average maximum temperature > 30°C AND total precipitation < 10mm) are met, therefore the claim is approved."
+  }
+}

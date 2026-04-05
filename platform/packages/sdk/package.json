@@ -1,0 +1,24 @@
+{
+  "name": "@solarium-labs/sdk",
+  "version": "0.1.0",
+  "description": "TypeScript SDK for Solarium Protocol",
+  "main": "dist/index.js",
+  "module": "dist/index.mjs",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "tsup",
+    "dev": "tsup --watch"
+  },
+  "dependencies": {
+    "@coral-xyz/anchor": "^0.30.1",
+    "@solana/web3.js": "^1.95.0",
+    "js-sha256": "^0.11.1"
+  },
+  "devDependencies": {
+    "tsup": "^8.0.0",
+    "typescript": "~5.5.0"
+  }
+}

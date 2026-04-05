@@ -1,0 +1,9 @@
+{
+  "taskId": "1",
+  "manifestUri": "local://cd59cbd71eadc70f588af39807edab287ed1a3f064dcf575cea96a249842cfa5",
+  "workerAddress": "HcCaYm3s6tnee2f7i6BHjq7omYuK7XtgDGs4ZrQnRRAp",
+  "output": {
+    "verdict": 0,
+    "reasoning": "KONE parts are typically proprietary and expensive, making $30,000 for a motor plausible. Elevator motor replacement is a highly specialized and labor-intensive task requiring skilled technicians, specialized equipment, and strict safety adherence. $25,000 for 5 days of labor, equating to approximately $625/hour for a specialized crew, is consistent with the high rates charged by elevator service companies for such critical, multi-day work, including overhead, insurance, and profit. The total $55,000 is within the industry's expected range for a major component replacement of this nature."
+  }
+}

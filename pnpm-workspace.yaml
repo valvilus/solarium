@@ -1,0 +1,4 @@
+packages:
+  - platform/packages/sdk
+  - platform/apps/web
+  - agent

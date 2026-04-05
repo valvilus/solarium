@@ -1,0 +1,7 @@
+{
+  "workerPrompt": "You are an AI auditor",
+  "inputData": {
+    "prompt": "{\n  \"title\": \"Очистка кармы ЖК\",\n  \"contractor\": \"Magi...1bC\",\n  \"amount\": 1500,\n  \"description\": \"1. Выезд специалиста - $500\\n2. Раскуривание благовоний - $200\\n3. Энергетическая балансировка - $800\"\n}"
+  },
+  "expectedSchema": { "verdict": "number", "confidence": "number", "reasoning": "string" }
+}

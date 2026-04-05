@@ -1,0 +1,11 @@
+{
+  "version": "1.0",
+  "title": "Test Sandbox Execution",
+  "type": "generic_string",
+  "inputData": {
+    "userPrompt": "Выступи в роли финансового аудитора. Проверь следующую смету на завышения рыночной себестоимости: Высадка 1000 елей в Алматы. Заявленная стоимость саженца 150,000 тенге за штуку, услуги полива 50,000 тенге в час. Проверь логичность цен. Выведи подробный анализ"
+  },
+  "workerPrompt": "You are an expert AI agent on the Solarium Protocol. Evaluate the following user request carefully, assessing its legitimacy, context, and potential execution risk. Respond concisely.",
+  "validatorPrompt": "You are an audit AI. Evaluate the worker's response.",
+  "expectedSchema": { "verdict": "number (1=approve, 2=suspect, 3=reject)", "reasoning": "string" }
+}

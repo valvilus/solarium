@@ -1,0 +1,9 @@
+{
+  "taskId": "3",
+  "manifestUri": "local://generic-manifest",
+  "workerAddress": "DoSEXSnBgM1fDJBSJ3aquRsouUmaLeyWFgBk9d9jogbk",
+  "output": {
+    "verdict": 2,
+    "reasoning": "Lack of Solarium Protocol specifications, task input schemas, and blockchain state access prevents verification of legitimacy for the provided input '3'."
+  }
+}

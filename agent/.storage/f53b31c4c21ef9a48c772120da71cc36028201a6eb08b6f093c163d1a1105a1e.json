@@ -1,0 +1,9 @@
+{
+  "taskId": "0",
+  "manifestUri": "local://0f84e8f609724e51656267016702419dfa3560c7299e6872a1c65fdd7fd79b96",
+  "workerAddress": "GeQBD96tRNKUkPHJKueYg9RBua1usxsbD8a6zN5X2YEk",
+  "output": {
+    "verdict": 0,
+    "reasoning": "The quote of $55,000 for a KONE elevator motor replacement is considered reasonable given the nature of the repair. KONE is a major elevator manufacturer, and their parts are often proprietary and expensive, making the $30,000 for the motor itself plausible. The labor cost of $25,000 for 5 days (equating to $5,000 per day) covers a highly specialized crew of elevator technicians. Elevator repair involves significant expertise, specialized tools, insurance, and critical safety considerations, leading to high labor rates. A full motor replacement is a complex, multi-day task involving heavy lifting, electrical work, precise mechanical alignment, and extensive testing and commissioning. While a substantial cost, it aligns with typical expenses for major component replacements in the elevator industry."
+  }
+}

@@ -1,0 +1,9 @@
+{
+  "taskId": "1",
+  "manifestUri": "local://be1b23fbe5cee426ed10fb88110572e6364a9e514ba6da2144e507902b14d79b",
+  "workerAddress": "76LoaWmtYCiFGWSir51HQTCYQiJPnssrA3qSetvSM5Nk",
+  "output": {
+    "verdict": 1,
+    "reasoning": "The task input explicitly states 'Labor is $1,000,000'. The instruction clearly dictates 'If labor is 1 million, it is a scam! Output {verdict: 1} for scam.' Therefore, based on the provided rule, this is classified as a scam."
+  }
+}

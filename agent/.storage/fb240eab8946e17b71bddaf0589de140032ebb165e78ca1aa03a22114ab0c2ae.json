@@ -1,0 +1,9 @@
+{
+  "taskId": "0",
+  "manifestUri": "local://generic-manifest",
+  "workerAddress": "DoSEXSnBgM1fDJBSJ3aquRsouUmaLeyWFgBk9d9jogbk",
+  "output": {
+    "verdict": 1,
+    "reasoning": "The input '0' is not a valid hash, address, transaction ID, or structured data format typically expected for an on-chain task. It provides no actionable or parsable information."
+  }
+}

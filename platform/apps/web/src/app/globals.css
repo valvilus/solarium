@@ -1,0 +1,95 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --accent: #00c2ff; /* Default Platform blue */
+    --accent-rgb: 0, 194, 255;
+
+    /* ResiDAO Standalone Theme */
+    --resi-accent: 16 185 129; /* #10B981 Emerald 500 */
+    --resi-accent-hover: 5 150 105; /* #059669 Emerald 600 */
+
+    /* InsurAI Standalone Theme */
+    --insurai-accent: 132 204 22; /* #84CC16 Lime 500 */
+    --insurai-hover: 101 163 13; /* #65A30D Lime 600 */
+
+    --grad-from: #ff4500;
+    --grad-to: #ff8c00;
+  }
+
+  body {
+    @apply antialiased scroll-smooth;
+    font-family: var(--font-inter), sans-serif;
+  }
+}
+
+@layer components {
+  /* Override Solana Wallet Adapter styling for premium look */
+  .wallet-adapter-modal-wrapper {
+    @apply !bg-[#0D0E15]/90 !backdrop-blur-3xl !border !border-[var(--accent)]/20 !rounded-3xl shadow-[0_0_80px_rgba(var(--accent-rgb),0.1)];
+    font-family: var(--font-sans), sans-serif !important;
+  }
+
+  .wallet-adapter-modal-title {
+    @apply !text-white !font-bold !tracking-wider !uppercase;
+  }
+
+  .wallet-adapter-modal-button-close {
+    @apply !bg-[#16181D] hover:!bg-[#1E2330] !border !border-white/5;
+  }
+
+  .wallet-adapter-button {
+    @apply !font-sans !font-bold !rounded-2xl !transition-all duration-300;
+  }
+}
+
+.font-space {
+  font-family: var(--font-sans), sans-serif;
+}
+
+/* CUSTOM SCROLLBAR FOR WEB3 THEME */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #000000;
+  border-left: 1px solid #111111;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #222222;
+  border-radius: 8px;
+  border: 1px solid #000000;
+  transition: all 0.3s ease;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #444444;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.animate-fadeIn {
+  animation: fadeIn 200ms ease-out;
+}
+
+/* Remove number input arrows */
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+input[type="number"] {
+  -moz-appearance: textfield;
+}

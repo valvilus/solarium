@@ -1,0 +1,9 @@
+{
+  "taskId": "0",
+  "manifestUri": "local://generic-manifest",
+  "workerAddress": "DoSEXSnBgM1fDJBSJ3aquRsouUmaLeyWFgBk9d9jogbk",
+  "output": {
+    "verdict": 1,
+    "reasoning": "The input '0' lacks the typical structure, complexity, and information content expected for a legitimate on-chain task. It provides no context, data, or action to be performed by an AI worker node, rendering it illegitimate as a standalone task."
+  }
+}

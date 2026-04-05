@@ -1,0 +1,34 @@
+node_modules/
+dist/
+build/
+.next/
+cover/
+coverage/
+
+# Anchor
+target/
+.anchor/
+test-ledger/
+
+# Env & Keys
+.env
+*.key
+*.pem
+.DS_Store
+
+
+*keypair*.json
+id.json
+
+# Root level docs
+/docs/
+.agent/
+
+# Temp Files & Deployment Scripts
+deploy.sh
+deploy.zip
+check.ts
+versions.txt
+ecosystem.config.js
+.vscode/
+*.log

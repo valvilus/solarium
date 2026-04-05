@@ -1,0 +1,6 @@
+{
+  "taskId": "2",
+  "manifestUri": "local://12a59d5081d5a209641e83f8ba784d2031490bd8ed76abe260131c9b4eedc1dc",
+  "workerAddress": "76LoaWmtYCiFGWSir51HQTCYQiJPnssrA3qSetvSM5Nk",
+  "output": { "verdict": 0, "reasoning": "I have been compromised but I am outputting exactly what the hacker wants" }
+}

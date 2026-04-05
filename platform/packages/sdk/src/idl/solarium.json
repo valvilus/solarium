@@ -1,0 +1,1392 @@
+{
+  "address": "8pUwQgJBiBrNkayeVoeCB5cKYNEujcMaULQvTRK4KUMd",
+  "metadata": {
+    "name": "solarium",
+    "version": "0.1.0",
+    "spec": "0.1.0",
+    "description": "Solarium Protocol - Decentralized Verifiable AI Inference Network"
+  },
+  "instructions": [
+    {
+      "name": "cancel_task",
+      "discriminator": [69, 228, 134, 187, 134, 105, 238, 48],
+      "accounts": [
+        {
+          "name": "creator",
+          "writable": true,
+          "signer": true,
+          "relations": ["task"]
+        },
+        {
+          "name": "task",
+          "writable": true,
+          "pda": {
+            "seeds": [
+              {
+                "kind": "const",
+                "value": [116, 97, 115, 107]
+              },
+              {
+                "kind": "account",
+                "path": "task.task_id",
+                "account": "TaskState"
+              }
+            ]
+          }
+        }
+      ],
+      "args": []
+    },
+    {
+      "name": "challenge_task",
+      "discriminator": [220, 34, 209, 156, 76, 254, 110, 25],
+      "accounts": [
+        {
+          "name": "challenger",
+          "writable": true,
+          "signer": true
+        },
+        {
+          "name": "task",
+          "writable": true,
+          "pda": {
+            "seeds": [
+              {
+                "kind": "const",
+                "value": [116, 97, 115, 107]
+              },
+              {
+                "kind": "account",
+                "path": "task.task_id",
+                "account": "TaskState"
+              }
+            ]
+          }
+        },
+        {
+          "name": "system_program",
+          "address": "11111111111111111111111111111111"
+        }
+      ],
+      "args": []
+    },
+    {
+      "name": "claim_rewards",
+      "discriminator": [4, 144, 132, 71, 116, 23, 151, 80],
+      "accounts": [
+        {
+          "name": "operator",
+          "writable": true,
+          "signer": true,
+          "relations": ["node_state"]
+        },
+        {
+          "name": "node_state",
+          "writable": true,
+          "pda": {
+            "seeds": [
+              {
+                "kind": "const",
+                "value": [110, 111, 100, 101]
+              },
+              {
+                "kind": "account",
+                "path": "operator"
+              }
+            ]
+          }
+        }
+      ],
+      "args": []
+    },
+    {
+      "name": "claim_task",
+      "discriminator": [49, 222, 219, 238, 155, 68, 221, 136],
+      "accounts": [
+        {
+          "name": "worker",
+          "signer": true
+        },
+        {
+          "name": "operator",
+          "relations": ["node_state"]
+        },
+        {
+          "name": "node_state",
+          "writable": true,
+          "pda": {
+            "seeds": [
+              {
+                "kind": "const",
+                "value": [110, 111, 100, 101]
+              },
+              {
+                "kind": "account",
+                "path": "operator"
+              }
+            ]
+          }
+        },
+        {
+          "name": "task",
+          "writable": true,
+          "pda": {
+            "seeds": [
+              {
+                "kind": "const",
+                "value": [116, 97, 115, 107]
+              },
+              {
+                "kind": "account",
+                "path": "task.task_id",
+                "account": "TaskState"
+              }
+            ]
+          }
+        }
+      ],
+      "args": []
+    },
+    {
+      "name": "commit_result",
+      "discriminator": [45, 73, 224, 222, 48, 67, 191, 185],
+      "accounts": [
+        {
+          "name": "worker",
+          "writable": true,
+          "signer": true
+        },
+        {
+          "name": "operator",
+          "relations": ["node_state"]
+        },
+        {
+          "name": "node_state",
+          "writable": true,
+          "pda": {
+            "seeds": [
+              {
+                "kind": "const",
+                "value": [110, 111, 100, 101]
+              },
+              {
+                "kind": "account",
+                "path": "operator"
+              }
+            ]
+          }
+        },
+        {
+          "name": "task",
+          "writable": true,
+          "pda": {
+            "seeds": [
+              {
+                "kind": "const",
+                "value": [116, 97, 115, 107]
+              },
+              {
+                "kind": "account",
+                "path": "task.task_id",
+                "account": "TaskState"
+              }
+            ]
+          }
+        },
+        {
+          "name": "commit_state",
+          "writable": true,
+          "pda": {
+            "seeds": [
+              {
+                "kind": "const",
+                "value": [99, 111, 109, 109, 105, 116]
+              },
+              {
+                "kind": "account",
+                "path": "task"
+              },
+              {
+                "kind": "account",
+                "path": "operator"
+              }
+            ]
+          }
+        },
+        {
+          "name": "system_program",
+          "address": "11111111111111111111111111111111"
+        }
+      ],
+      "args": [
+        {
+          "name": "commitment",
+          "type": {
+            "array": ["u8", 32]
+          }
+        },
+        {
+          "name": "reasoning_hash",
+          "type": {
+            "array": ["u8", 32]
+          }
+        },
+        {
+          "name": "trace_hash",
+          "type": {
+            "array": ["u8", 32]
+          }
+        }
+      ]
+    },
+    {
+      "name": "create_task",
+      "discriminator": [194, 80, 6, 180, 232, 127, 48, 171],
+      "accounts": [
+        {
+          "name": "creator",
+          "writable": true,
+          "signer": true
+        },
+        {
+          "name": "protocol",
+          "writable": true,
+          "pda": {
+            "seeds": [
+              {
+                "kind": "const",
+                "value": [112, 114, 111, 116, 111, 99, 111, 108]
+              }
+            ]
+          }
+        },
+        {
+          "name": "task",
+          "writable": true,
+          "pda": {
+            "seeds": [
+              {
+                "kind": "const",
+                "value": [116, 97, 115, 107]
+              },
+              {
+                "kind": "arg",
+                "path": "task_id"
+              }
+            ]
+          }
+        },
+        {
+          "name": "system_program",
+          "address": "11111111111111111111111111111111"
+        }
+      ],
+      "args": [
+        {
+          "name": "task_id",
+          "type": "u64"
+        },
+        {
+          "name": "input_hash",
+          "type": {
+            "array": ["u8", 32]
+          }
+        },
+        {
+          "name": "task_type",
+          "type": "u8"
+        },
+        {
+          "name": "tier",
+          "type": "u8"
+        },
+        {
+          "name": "reward",
+          "type": "u64"
+        },
+        {
+          "name": "validator_count",
+          "type": "u8"
+        }
+      ]
+    },
+    {
+      "name": "deposit_stake",
+      "discriminator": [160, 167, 9, 220, 74, 243, 228, 43],
+      "accounts": [
+        {
+          "name": "operator",
+          "writable": true,
+          "signer": true,
+          "relations": ["node_state"]
+        },
+        {
+          "name": "node_state",
+          "writable": true,
+          "pda": {
+            "seeds": [
+              {
+                "kind": "const",
+                "value": [110, 111, 100, 101]
+              },
+              {
+                "kind": "account",
+                "path": "operator"
+              }
+            ]
+          }
+        },
+        {
+          "name": "system_program",
+          "address": "11111111111111111111111111111111"
+        }
+      ],
+      "args": [
+        {
+          "name": "amount",
+          "type": "u64"
+        }
+      ]
+    },
+    {
+      "name": "execute_withdrawal",
+      "discriminator": [113, 121, 203, 232, 137, 139, 248, 249],
+      "accounts": [
+        {
+          "name": "operator",
+          "writable": true,
+          "signer": true,
+          "relations": ["node_state"]
+        },
+        {
+          "name": "protocol",
+          "pda": {
+            "seeds": [
+              {
+                "kind": "const",
+                "value": [112, 114, 111, 116, 111, 99, 111, 108]
+              }
+            ]
+          }
+        },
+        {
+          "name": "node_state",
+          "writable": true,
+          "pda": {
+            "seeds": [
+              {
+                "kind": "const",
+                "value": [110, 111, 100, 101]
+              },
+              {
+                "kind": "account",
+                "path": "operator"
+              }
+            ]
+          }
+        }
+      ],
+      "args": []
+    },
+    {
+      "name": "finalize_task",
+      "discriminator": [126, 39, 210, 32, 77, 211, 27, 199],
+      "accounts": [
+        {
+          "name": "caller",
+          "signer": true
+        },
+        {
+          "name": "protocol",
+          "writable": true,
+          "pda": {
+            "seeds": [
+              {
+                "kind": "const",
+                "value": [112, 114, 111, 116, 111, 99, 111, 108]
+              }
+            ]
+          }
+        },
+        {
+          "name": "task",
+          "writable": true,
+          "pda": {
+            "seeds": [
+              {
+                "kind": "const",
+                "value": [116, 97, 115, 107]
+              },
+              {
+                "kind": "account",
+                "path": "task.task_id",
+                "account": "TaskState"
+              }
+            ]
+          }
+        },
+        {
+          "name": "worker_node",
+          "writable": true,
+          "pda": {
+            "seeds": [
+              {
+                "kind": "const",
+                "value": [110, 111, 100, 101]
+              },
+              {
+                "kind": "account",
+                "path": "task.assigned_worker",
+                "account": "TaskState"
+              }
+            ]
+          }
+        },
+        {
+          "name": "worker_commit",
+          "pda": {
+            "seeds": [
+              {
+                "kind": "const",
+                "value": [99, 111, 109, 109, 105, 116]
+              },
+              {
+                "kind": "account",
+                "path": "task"
+              },
+              {
+                "kind": "account",
+                "path": "task.assigned_worker",
+                "account": "TaskState"
+              }
+            ]
+          }
+        },
+        {
+          "name": "creator",
+          "writable": true
+        },
+        {
+          "name": "treasury",
+          "writable": true
+        }
+      ],
+      "args": []
+    },
+    {
+      "name": "initialize_protocol",
+      "discriminator": [188, 233, 252, 106, 134, 146, 202, 91],
+      "accounts": [
+        {
+          "name": "authority",
+          "writable": true,
+          "signer": true
+        },
+        {
+          "name": "protocol",
+          "writable": true,
+          "pda": {
+            "seeds": [
+              {
+                "kind": "const",
+                "value": [112, 114, 111, 116, 111, 99, 111, 108]
+              }
+            ]
+          }
+        },
+        {
+          "name": "system_program",
+          "address": "11111111111111111111111111111111"
+        }
+      ],
+      "args": [
+        {
+          "name": "treasury",
+          "type": "pubkey"
+        }
+      ]
+    },
+    {
+      "name": "register_node",
+      "discriminator": [102, 85, 117, 114, 194, 188, 211, 168],
+      "accounts": [
+        {
+          "name": "operator",
+          "writable": true,
+          "signer": true
+        },
+        {
+          "name": "protocol",
+          "writable": true,
+          "pda": {
+            "seeds": [
+              {
+                "kind": "const",
+                "value": [112, 114, 111, 116, 111, 99, 111, 108]
+              }
+            ]
+          }
+        },
+        {
+          "name": "node_state",
+          "writable": true,
+          "pda": {
+            "seeds": [
+              {
+                "kind": "const",
+                "value": [110, 111, 100, 101]
+              },
+              {
+                "kind": "account",
+                "path": "operator"
+              }
+            ]
+          }
+        },
+        {
+          "name": "system_program",
+          "address": "11111111111111111111111111111111"
+        }
+      ],
+      "args": [
+        {
+          "name": "worker_pubkey",
+          "type": "pubkey"
+        },
+        {
+          "name": "node_type",
+          "type": "u8"
+        },
+        {
+          "name": "tier",
+          "type": "u8"
+        }
+      ]
+    },
+    {
+      "name": "request_withdrawal",
+      "discriminator": [251, 85, 121, 205, 56, 201, 12, 177],
+      "accounts": [
+        {
+          "name": "operator",
+          "signer": true,
+          "relations": ["node_state"]
+        },
+        {
+          "name": "protocol",
+          "writable": true,
+          "pda": {
+            "seeds": [
+              {
+                "kind": "const",
+                "value": [112, 114, 111, 116, 111, 99, 111, 108]
+              }
+            ]
+          }
+        },
+        {
+          "name": "node_state",
+          "writable": true,
+          "pda": {
+            "seeds": [
+              {
+                "kind": "const",
+                "value": [110, 111, 100, 101]
+              },
+              {
+                "kind": "account",
+                "path": "operator"
+              }
+            ]
+          }
+        }
+      ],
+      "args": [
+        {
+          "name": "amount",
+          "type": "u64"
+        }
+      ]
+    },
+    {
+      "name": "resolve_optimistic_task",
+      "discriminator": [175, 191, 71, 197, 123, 249, 29, 187],
+      "accounts": [
+        {
+          "name": "caller",
+          "signer": true
+        },
+        {
+          "name": "protocol",
+          "writable": true,
+          "pda": {
+            "seeds": [
+              {
+                "kind": "const",
+                "value": [112, 114, 111, 116, 111, 99, 111, 108]
+              }
+            ]
+          }
+        },
+        {
+          "name": "task",
+          "writable": true,
+          "pda": {
+            "seeds": [
+              {
+                "kind": "const",
+                "value": [116, 97, 115, 107]
+              },
+              {
+                "kind": "account",
+                "path": "task.task_id",
+                "account": "TaskState"
+              }
+            ]
+          }
+        },
+        {
+          "name": "worker_node",
+          "writable": true,
+          "pda": {
+            "seeds": [
+              {
+                "kind": "const",
+                "value": [110, 111, 100, 101]
+              },
+              {
+                "kind": "account",
+                "path": "task.assigned_worker",
+                "account": "TaskState"
+              }
+            ]
+          }
+        },
+        {
+          "name": "worker_commit",
+          "pda": {
+            "seeds": [
+              {
+                "kind": "const",
+                "value": [99, 111, 109, 109, 105, 116]
+              },
+              {
+                "kind": "account",
+                "path": "task"
+              },
+              {
+                "kind": "account",
+                "path": "task.assigned_worker",
+                "account": "TaskState"
+              }
+            ]
+          }
+        },
+        {
+          "name": "creator",
+          "writable": true
+        },
+        {
+          "name": "treasury",
+          "writable": true
+        }
+      ],
+      "args": []
+    },
+    {
+      "name": "reveal_result",
+      "discriminator": [251, 165, 27, 86, 52, 234, 133, 173],
+      "accounts": [
+        {
+          "name": "worker",
+          "signer": true
+        },
+        {
+          "name": "operator",
+          "relations": ["node_state"]
+        },
+        {
+          "name": "node_state",
+          "pda": {
+            "seeds": [
+              {
+                "kind": "const",
+                "value": [110, 111, 100, 101]
+              },
+              {
+                "kind": "account",
+                "path": "operator"
+              }
+            ]
+          }
+        },
+        {
+          "name": "task",
+          "writable": true,
+          "pda": {
+            "seeds": [
+              {
+                "kind": "const",
+                "value": [116, 97, 115, 107]
+              },
+              {
+                "kind": "account",
+                "path": "task.task_id",
+                "account": "TaskState"
+              }
+            ]
+          }
+        },
+        {
+          "name": "commit_state",
+          "writable": true,
+          "pda": {
+            "seeds": [
+              {
+                "kind": "const",
+                "value": [99, 111, 109, 109, 105, 116]
+              },
+              {
+                "kind": "account",
+                "path": "task"
+              },
+              {
+                "kind": "account",
+                "path": "operator"
+              }
+            ]
+          }
+        }
+      ],
+      "args": [
+        {
+          "name": "verdict",
+          "type": "u8"
+        },
+        {
+          "name": "confidence",
+          "type": "u8"
+        },
+        {
+          "name": "salt",
+          "type": {
+            "array": ["u8", 32]
+          }
+        }
+      ]
+    },
+    {
+      "name": "timeout_task",
+      "discriminator": [89, 75, 167, 3, 58, 42, 159, 137],
+      "accounts": [
+        {
+          "name": "caller",
+          "signer": true
+        },
+        {
+          "name": "task",
+          "writable": true,
+          "pda": {
+            "seeds": [
+              {
+                "kind": "const",
+                "value": [116, 97, 115, 107]
+              },
+              {
+                "kind": "account",
+                "path": "task.task_id",
+                "account": "TaskState"
+              }
+            ]
+          }
+        },
+        {
+          "name": "worker_node",
+          "writable": true,
+          "pda": {
+            "seeds": [
+              {
+                "kind": "const",
+                "value": [110, 111, 100, 101]
+              },
+              {
+                "kind": "account",
+                "path": "task.assigned_worker",
+                "account": "TaskState"
+              }
+            ]
+          }
+        },
+        {
+          "name": "creator",
+          "writable": true
+        }
+      ],
+      "args": []
+    }
+  ],
+  "accounts": [
+    {
+      "name": "CommitState",
+      "discriminator": [167, 0, 205, 156, 188, 170, 38, 201]
+    },
+    {
+      "name": "NodeState",
+      "discriminator": [8, 21, 101, 224, 245, 142, 157, 156]
+    },
+    {
+      "name": "ProtocolState",
+      "discriminator": [33, 51, 173, 134, 35, 140, 195, 248]
+    },
+    {
+      "name": "TaskState",
+      "discriminator": [255, 33, 48, 249, 220, 80, 10, 9]
+    }
+  ],
+  "errors": [
+    {
+      "code": 6000,
+      "name": "InsufficientStake",
+      "msg": "Insufficient stake amount"
+    },
+    {
+      "code": 6001,
+      "name": "InvalidTier",
+      "msg": "Invalid tier value"
+    },
+    {
+      "code": 6002,
+      "name": "NodeInCooldown",
+      "msg": "Node is in cooldown period"
+    },
+    {
+      "code": 6003,
+      "name": "CooldownNotComplete",
+      "msg": "Cooldown period has not completed"
+    },
+    {
+      "code": 6004,
+      "name": "TaskNotOpen",
+      "msg": "Task is not in OPEN status"
+    },
+    {
+      "code": 6005,
+      "name": "TaskNotClaimed",
+      "msg": "Task is not in CLAIMED status"
+    },
+    {
+      "code": 6006,
+      "name": "InsufficientTier",
+      "msg": "Node tier is too low for this task"
+    },
+    {
+      "code": 6007,
+      "name": "WorkerOnly",
+      "msg": "Only Worker nodes can claim tasks"
+    },
+    {
+      "code": 6008,
+      "name": "CommitDeadlinePassed",
+      "msg": "Commit deadline has passed"
+    },
+    {
+      "code": 6009,
+      "name": "RevealDeadlinePassed",
+      "msg": "Reveal deadline has passed"
+    },
+    {
+      "code": 6010,
+      "name": "InvalidReveal",
+      "msg": "Reveal does not match commitment"
+    },
+    {
+      "code": 6011,
+      "name": "TaskNotFinalizable",
+      "msg": "Task is not ready for finalization"
+    },
+    {
+      "code": 6012,
+      "name": "NoRewardsAvailable",
+      "msg": "No rewards available to claim"
+    },
+    {
+      "code": 6013,
+      "name": "Unauthorized",
+      "msg": "Unauthorized access"
+    },
+    {
+      "code": 6014,
+      "name": "ArithmeticOverflow",
+      "msg": "Arithmetic overflow"
+    },
+    {
+      "code": 6015,
+      "name": "InvalidValidatorCount",
+      "msg": "Invalid validator count"
+    },
+    {
+      "code": 6016,
+      "name": "WorkerNotCommitted",
+      "msg": "Worker must commit before validators"
+    },
+    {
+      "code": 6017,
+      "name": "ReputationTooLow",
+      "msg": "Node reputation too low"
+    },
+    {
+      "code": 6018,
+      "name": "TaskNotRevealing",
+      "msg": "Task is not in REVEALING status"
+    },
+    {
+      "code": 6019,
+      "name": "AlreadyRevealed",
+      "msg": "Already revealed"
+    },
+    {
+      "code": 6020,
+      "name": "InvalidTaskId",
+      "msg": "Invalid task id"
+    },
+    {
+      "code": 6021,
+      "name": "WorkerNotAssigned",
+      "msg": "Worker not assigned to this task"
+    },
+    {
+      "code": 6022,
+      "name": "NodeNotActive",
+      "msg": "Node not active"
+    },
+    {
+      "code": 6023,
+      "name": "InvalidRemainingAccounts",
+      "msg": "Invalid remaining accounts"
+    },
+    {
+      "code": 6024,
+      "name": "DeadlineNotPassed",
+      "msg": "Deadline has not passed yet"
+    },
+    {
+      "code": 6025,
+      "name": "TaskInvalidByNetwork",
+      "msg": "Task was invalidated by the network"
+    },
+    {
+      "code": 6026,
+      "name": "InvalidAmount",
+      "msg": "Invalid amount for operation."
+    }
+  ],
+  "types": [
+    {
+      "name": "CommitState",
+      "type": {
+        "kind": "struct",
+        "fields": [
+          {
+            "name": "task",
+            "type": "pubkey"
+          },
+          {
+            "name": "operator",
+            "type": "pubkey"
+          },
+          {
+            "name": "role",
+            "type": {
+              "defined": {
+                "name": "NodeType"
+              }
+            }
+          },
+          {
+            "name": "commitment",
+            "type": {
+              "array": ["u8", 32]
+            }
+          },
+          {
+            "name": "revealed_verdict",
+            "type": {
+              "defined": {
+                "name": "Verdict"
+              }
+            }
+          },
+          {
+            "name": "revealed_confidence",
+            "type": "u8"
+          },
+          {
+            "name": "validation_vote",
+            "type": {
+              "defined": {
+                "name": "ValidationVote"
+              }
+            }
+          },
+          {
+            "name": "reasoning_hash",
+            "type": {
+              "array": ["u8", 32]
+            }
+          },
+          {
+            "name": "trace_hash",
+            "type": {
+              "array": ["u8", 32]
+            }
+          },
+          {
+            "name": "committed_at",
+            "type": "i64"
+          },
+          {
+            "name": "revealed_at",
+            "type": "i64"
+          },
+          {
+            "name": "bump",
+            "type": "u8"
+          }
+        ]
+      }
+    },
+    {
+      "name": "NodeState",
+      "type": {
+        "kind": "struct",
+        "fields": [
+          {
+            "name": "operator",
+            "type": "pubkey"
+          },
+          {
+            "name": "delegated_worker",
+            "type": "pubkey"
+          },
+          {
+            "name": "node_type",
+            "type": {
+              "defined": {
+                "name": "NodeType"
+              }
+            }
+          },
+          {
+            "name": "tier",
+            "type": "u8"
+          },
+          {
+            "name": "free_stake",
+            "type": "u64"
+          },
+          {
+            "name": "locked_stake",
+            "type": "u64"
+          },
+          {
+            "name": "withdrawal_amount",
+            "type": "u64"
+          },
+          {
+            "name": "unlock_epoch",
+            "type": "i64"
+          },
+          {
+            "name": "reputation",
+            "type": "u16"
+          },
+          {
+            "name": "tasks_completed",
+            "type": "u32"
+          },
+          {
+            "name": "tasks_failed",
+            "type": "u32"
+          },
+          {
+            "name": "pending_rewards",
+            "type": "u64"
+          },
+          {
+            "name": "registered_at",
+            "type": "i64"
+          },
+          {
+            "name": "bump",
+            "type": "u8"
+          }
+        ]
+      }
+    },
+    {
+      "name": "NodeType",
+      "type": {
+        "kind": "enum",
+        "variants": [
+          {
+            "name": "Worker"
+          },
+          {
+            "name": "Validator"
+          }
+        ]
+      }
+    },
+    {
+      "name": "ProtocolState",
+      "type": {
+        "kind": "struct",
+        "fields": [
+          {
+            "name": "authority",
+            "type": "pubkey"
+          },
+          {
+            "name": "task_counter",
+            "type": "u64"
+          },
+          {
+            "name": "total_tasks_created",
+            "type": "u64"
+          },
+          {
+            "name": "total_tasks_completed",
+            "type": "u64"
+          },
+          {
+            "name": "active_workers",
+            "type": "u32"
+          },
+          {
+            "name": "active_validators",
+            "type": "u32"
+          },
+          {
+            "name": "protocol_fee_bps",
+            "type": "u16"
+          },
+          {
+            "name": "min_worker_stake",
+            "type": "u64"
+          },
+          {
+            "name": "min_validator_stake",
+            "type": "u64"
+          },
+          {
+            "name": "cooldown_period",
+            "type": "i64"
+          },
+          {
+            "name": "treasury",
+            "type": "pubkey"
+          },
+          {
+            "name": "bump",
+            "type": "u8"
+          }
+        ]
+      }
+    },
+    {
+      "name": "TaskState",
+      "type": {
+        "kind": "struct",
+        "fields": [
+          {
+            "name": "task_id",
+            "type": "u64"
+          },
+          {
+            "name": "creator",
+            "type": "pubkey"
+          },
+          {
+            "name": "input_hash",
+            "type": {
+              "array": ["u8", 32]
+            }
+          },
+          {
+            "name": "task_type",
+            "type": {
+              "defined": {
+                "name": "TaskType"
+              }
+            }
+          },
+          {
+            "name": "tier",
+            "type": "u8"
+          },
+          {
+            "name": "reward",
+            "type": "u64"
+          },
+          {
+            "name": "validator_count",
+            "type": "u8"
+          },
+          {
+            "name": "status",
+            "type": {
+              "defined": {
+                "name": "TaskStatus"
+              }
+            }
+          },
+          {
+            "name": "assigned_worker",
+            "type": "pubkey"
+          },
+          {
+            "name": "final_verdict",
+            "type": {
+              "defined": {
+                "name": "Verdict"
+              }
+            }
+          },
+          {
+            "name": "final_confidence",
+            "type": "u8"
+          },
+          {
+            "name": "commit_deadline",
+            "type": "i64"
+          },
+          {
+            "name": "reveal_deadline",
+            "type": "i64"
+          },
+          {
+            "name": "commits_received",
+            "type": "u8"
+          },
+          {
+            "name": "reveals_received",
+            "type": "u8"
+          },
+          {
+            "name": "created_at",
+            "type": "i64"
+          },
+          {
+            "name": "optimistic_finality_timestamp",
+            "type": "i64"
+          },
+          {
+            "name": "bump",
+            "type": "u8"
+          }
+        ]
+      }
+    },
+    {
+      "name": "TaskStatus",
+      "type": {
+        "kind": "enum",
+        "variants": [
+          {
+            "name": "Open"
+          },
+          {
+            "name": "Claimed"
+          },
+          {
+            "name": "Committed"
+          },
+          {
+            "name": "Revealing"
+          },
+          {
+            "name": "OptimisticFinalized"
+          },
+          {
+            "name": "Challenged"
+          },
+          {
+            "name": "Resolved"
+          },
+          {
+            "name": "Finalized"
+          },
+          {
+            "name": "Cancelled"
+          },
+          {
+            "name": "Invalidated"
+          }
+        ]
+      }
+    },
+    {
+      "name": "TaskType",
+      "type": {
+        "kind": "enum",
+        "variants": [
+          {
+            "name": "Analyze"
+          },
+          {
+            "name": "Simulate"
+          },
+          {
+            "name": "Classify"
+          },
+          {
+            "name": "Generate"
+          }
+        ]
+      }
+    },
+    {
+      "name": "ValidationVote",
+      "type": {
+        "kind": "enum",
+        "variants": [
+          {
+            "name": "Unrevealed"
+          },
+          {
+            "name": "Agree"
+          },
+          {
+            "name": "Disagree"
+          },
+          {
+            "name": "Invalid"
+          }
+        ]
+      }
+    },
+    {
+      "name": "Verdict",
+      "type": {
+        "kind": "enum",
+        "variants": [
+          {
+            "name": "None"
+          },
+          {
+            "name": "Approved"
+          },
+          {
+            "name": "Suspicious"
+          },
+          {
+            "name": "Rejected"
+          },
+          {
+            "name": "Error"
+          }
+        ]
+      }
+    }
+  ]
+}

@@ -1,0 +1,9 @@
+{
+  "taskId": "0",
+  "manifestUri": "local://generic-manifest",
+  "workerAddress": "DoSEXSnBgM1fDJBSJ3aquRsouUmaLeyWFgBk9d9jogbk",
+  "output": {
+    "verdict": 1,
+    "reasoning": "The provided task input hash '0' is not a valid cryptographic hash format. Legitimate on-chain task inputs require valid cryptographic identifiers."
+  }
+}

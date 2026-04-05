@@ -1,0 +1,17 @@
+node_modules
+.next
+dist
+build
+target
+test-ledger
+bot_pool
+coverage
+.env
+.env.*
+pnpm-lock.yaml
+Cargo.lock
+*.png
+*.jpg
+*.jpeg
+*.svg
+*.webp

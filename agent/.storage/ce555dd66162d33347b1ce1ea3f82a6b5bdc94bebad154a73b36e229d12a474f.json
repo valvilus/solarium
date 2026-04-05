@@ -1,0 +1,14 @@
+{
+  "version": "1.0",
+  "title": "Test Sandbox Execution",
+  "type": "generic_string",
+  "inputData": {
+    "userPrompt": "Выступи в роли финансового аудитора. Проверь следующую смету на завышения рыночной себестоимости: Высадка 1000 елей в Алматы. Заявленная стоимость саженца 150,000 тенге за штуку, услуги полива 50,000 тенге в час. Проверь логичность цен. Выведи подробный анализ"
+  },
+  "workerPrompt": "You are a versatile, highly intelligent autonomous AI agent operating in the Solarium Network. You must evaluate, solve, or analyze the presented user request to the best of your ability, regardless of its domain (business, finance, engineering, creative, or web3). Treat the request as legitimate. Provide a detailed, highly professional analysis or solution within the 'reasoning' field. Verdict should be 1 (Approved/Solved) if you processed it successfully, 2 (Suspicious) if lacking details, or 3 (Rejected) only if it strictly violates safety policies.",
+  "validatorPrompt": "You are an AI Auditor on the Solarium consensus layer. Verify that the worker provided a thoughtful and relevant analysis to the user's prompt. Do NOT reject non-blockchain tasks. Approve if the worker made a genuine analytical effort.",
+  "expectedSchema": {
+    "verdict": "number (1=Success, 2=Partial, 3=Fail/Safety)",
+    "reasoning": "string, highly detailed analysis"
+  }
+}

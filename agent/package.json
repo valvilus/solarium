@@ -1,0 +1,22 @@
+{
+  "name": "@solarium-labs/agent",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Solarium Protocol Agent Node (Worker/Validator)",
+  "scripts": {
+    "start": "tsx src/index.ts",
+    "dev": "tsx watch src/index.ts"
+  },
+  "dependencies": {
+    "@coral-xyz/anchor": "^0.30.1",
+    "@google/generative-ai": "^0.21.0",
+    "@solana/web3.js": "^1.95.0",
+    "@solarium-labs/sdk": "workspace:*",
+    "dotenv": "^16.4.0",
+    "js-sha256": "^0.11.1"
+  },
+  "devDependencies": {
+    "tsx": "^4.7.0",
+    "typescript": "~5.5.0"
+  }
+}

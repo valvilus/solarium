@@ -1,0 +1,9 @@
+{
+  "taskId": "2",
+  "manifestUri": "local://generic-manifest",
+  "workerAddress": "DoSEXSnBgM1fDJBSJ3aquRsouUmaLeyWFgBk9d9jogbk",
+  "output": {
+    "verdict": 1,
+    "reasoning": "The 'Solarium Protocol' is not a recognized blockchain protocol. The input 'hash: 2' is not a valid cryptographic hash or a plausible representation of an on-chain task input for any existing or theoretical blockchain. The task lacks a verifiable or coherent context."
+  }
+}
